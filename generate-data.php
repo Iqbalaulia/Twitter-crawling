@@ -2,16 +2,16 @@
 include "library/twitteroauth.php";
 include("config.php");
 
-$consumer_key ="AhYt2eSniXyp37REtmjv0kSkg";
-$consumer_secret ="Nmp7Li9gdiI5BthAvuWcrEpMxwTV6R3m06AebK9jce6cD2ZZG2";
-$acces_token ="829150783-TAzpWDHnjDG5MvJiqFh2foQhYa5jnk70Zq4PBBIw";
-$acces_token_screet ="0RdF5PK2bTtHfIOYZ0QK2shTml7Gq9P99pKI71xkpHVRo";
+$consumer_key ="UxDis1PMfDC121MZIijV79zu5";
+$consumer_secret ="iWAPcisOpxgKwKeDDVTPaKz0sy1xsCjnMzf2BSgysvckmdXrkc";
+$acces_token ="829150783-vvqia86QwYO2H50b6U3uRtkx1deClDT7wb3m610f";
+$acces_token_screet ="LrFpnoAB2q14zIcCcF5D0N1lmdvNZA4liwlmZfACHAAe3";
 
 // @$keyword = $_POST['keyword'];
 
 $twitter = new TwitterOAuth($consumer_key,$consumer_secret,$access_token,$access_token_secret);
 
-$tweets = $twitter->get('https://api.twitter.com/1.1/search/tweets.json?q=stikom&result_type=recent&count=1000');
+$tweets = $twitter->get('https://api.twitter.com/1.1/search/tweets.json?q=stikom&result_type=recent&count=100');
 echo "<pre>";
 echo json_encode($tweets);
 //print_r($tweets);
