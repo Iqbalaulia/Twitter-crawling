@@ -9,16 +9,20 @@
     <link rel="stylesheet" href="css/index.css">
 
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="    background-color:#F2F3F6;
+">
 
     <nav id="navbar" class="">
         <div class="nav-wrapper">
@@ -65,7 +69,30 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="table-one col-md-5">
+                    <div class="col-md-6">
+                        <?php 
+                        include 'config.php';
+                        $view = $db -> query ("SELECT COUNT(nama) AS jumlah FROM twitter_timeline  WHERE tweet LIKE '%ST%'");      
 
+							while($row=$view->fetch_array()){   
+							?>
+                        <p>
+                            <?php echo"".$row['jumlah'] ;""; ?>
+                        </p>
+
+                        <?php  
+
+							} 
+                        ?>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Tweets mengenai STIKOM Surabaya</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <a href=data-timeline.php> <button type="button" class="btn btn-success" style="width:150px; margin-left:110%;">Data
+                                Timeline</button>
+                        </a>
+                    </div>
                 </div>
                 <dib class="table-two col-md-5">
 
